@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import "../styles/_app.scss";
-import "../../../styles/_dark-mode.scss";
 
 function App() {
   const [dark, setDark] = useState(false);
   const handleDarkMode = () => {
     setDark(!dark);
-    // use DOM =>>> document.querySelector(".app").classList.toggle("dark-mode");
+    document.querySelector("#root").classList.toggle("dark-mode");
   };
 
   return (
-    <div className={!dark ? "app" : "app dark-mode"}>
+    <div className="app">
+      {/*DOM or =>>> className={!dark ? "app" : "app dark-mode"} */}
       <div className="level">
         <div>
           <h1 className="title">Dark Mode Challenge</h1>
@@ -29,7 +29,6 @@ function App() {
           />
         </button>
       </div>
-
       <div className="columns">
         <div className="column">
           <p>
@@ -51,19 +50,16 @@ function App() {
           </p>
         </div>
       </div>
-
       <div className="field">
         <div className="control">
           <input className="input" type="text" placeholder="Name" />
         </div>
       </div>
-
       <div className="field">
         <div className="control">
           <input className="input" type="text" placeholder="Email" />
         </div>
       </div>
-
       <section className="section">
         <div className="buttons level-right">
           <button className="button is-primary">Save</button>
