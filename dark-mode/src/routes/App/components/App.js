@@ -8,12 +8,11 @@ function App() {
   const [dark, setDark] = useState(false);
   const handleDarkMode = () => {
     setDark(!dark);
-    document.querySelector(".app").classList.toggle("dark-mode");
-    // e.target =>> e.target.parentNode.parentNode.parentNode.classList.toggle("dark-mode");
+    // use DOM =>>> document.querySelector(".app").classList.toggle("dark-mode");
   };
 
   return (
-    <div className="app">
+    <div className={!dark ? "app" : "app dark-mode"}>
       <div className="level">
         <div>
           <h1 className="title">Dark Mode Challenge</h1>
