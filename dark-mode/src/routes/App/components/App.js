@@ -24,7 +24,10 @@ function App() {
           onClick={handleDarkMode}
           className="app__dark-mode-btn icon level-right"
         >
-          <FontAwesomeIcon icon={!dark ? faMoon : faSun} />
+          <FontAwesomeIcon
+            color={!dark ? null : "#FFA500"}
+            icon={!dark ? faMoon : faSun}
+          />
         </button>
       </div>
 
